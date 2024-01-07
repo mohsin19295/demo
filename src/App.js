@@ -20,7 +20,7 @@ function App() {
       const apiKey = "3e19ce7b891447459477f5ef54207823";
       try {
         setLoading(true);
-        const res = await Axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=${apiKey}&page=${page}`);
+        const res = await Axios.get(`/api/v2/top-headlines?country=in&category=general&apiKey=${apiKey}&page=${page}`);
         console.log('data', res?.data?.articles);
         setPost(res?.data?.articles);
         setTotal(Math.ceil(res.data?.totalResults / limit));
